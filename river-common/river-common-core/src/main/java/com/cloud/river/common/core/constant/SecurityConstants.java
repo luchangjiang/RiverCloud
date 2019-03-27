@@ -20,8 +20,8 @@
 package com.cloud.river.common.core.constant;
 
 /**
- * @author lengleng
- * @date 2017-12-18
+ * @author River
+ * @date 2019-3-18
  */
 public interface SecurityConstants {
 	/**
@@ -80,7 +80,7 @@ public interface SecurityConstants {
 	/**
 	 * oauth 客户端信息
 	 */
-	String CLIENT_DETAILS_KEY = "pigx_oauth:client:details";
+	String CLIENT_DETAILS_KEY = "river_oauth:client:details";
 
 	/**
 	 * 微信获取OPENID
