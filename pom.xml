@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<modules>
+		<module>river-umps</module>
+		<module>river-common</module>
+	</modules>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.cloud.river</groupId>
+	<artifactId>RiverCloud</artifactId>
+	<version>1.0.1</version>
+	<name>${project.artifactId}</name>
+	<packaging>pom</packaging>
+	<organization>
+		<name>river</name>
+		<url>https://www.river.com</url>
+	</organization>
+	<description>River project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-boot.version>2.1.3.RELEASE</spring-boot.version>
+		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+		<security.oauth.version>2.3.4.RELEASE</security.oauth.version>
+		<security.oauth.auto.version>2.1.2.RELEASE</security.oauth.auto.version>
+		<hutool.version>4.3.2</hutool.version>
+		<ttl.version>2.10.1</ttl.version>
+	</properties>
+
+	<dependencies>
+		<!--eureka 客户端-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!--测试依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>river-common-bom</artifactId>
+				<version>${project.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!--稳定版本，替代spring security bom内置-->
+			<dependency>
+				<groupId>org.springframework.security.oauth</groupId>
+				<artifactId>spring-security-oauth2</artifactId>
+				<version>${security.oauth.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security.oauth.boot</groupId>
+				<artifactId>spring-security-oauth2-autoconfigure</artifactId>
+				<version>${security.oauth.auto.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<finalName>${project.name}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<target>${maven.compiler.target}</target>
+					<source>${maven.compiler.source}</source>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!--<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>2.2.5</version>
+			</plugin>-->
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>aliyun</id>
+			<name>aliyun</name>
+			<url>https://maven.aliyun.com/repository/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

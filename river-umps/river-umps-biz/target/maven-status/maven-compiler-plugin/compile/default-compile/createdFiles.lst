@@ -1,0 +1,13 @@
+com\river\cloud\riveradmin\mapper\SysUserMapper.class
+com\river\cloud\riveradmin\service\impl\SysUserRoleServiceImpl.class
+com\river\cloud\riveradmin\controller\SysUserRoleController.class
+com\river\cloud\riveradmin\mapper\SysLogMapper.class
+com\river\cloud\riveradmin\mapper\SysUserRoleMapper.class
+com\river\cloud\riveradmin\RiverAdminApplication.class
+com\river\cloud\riveradmin\controller\SysLogController.class
+com\river\cloud\riveradmin\service\SysLogService.class
+com\river\cloud\riveradmin\controller\SysUserController.class
+com\river\cloud\riveradmin\service\SysUserService.class
+com\river\cloud\riveradmin\service\impl\SysLogServiceImpl.class
+com\river\cloud\riveradmin\service\SysUserRoleService.class
+com\river\cloud\riveradmin\service\impl\SysUserServiceImpl.class
