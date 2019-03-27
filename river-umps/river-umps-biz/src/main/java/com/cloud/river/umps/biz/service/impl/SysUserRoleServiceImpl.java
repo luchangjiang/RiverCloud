@@ -20,6 +20,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cloud.river.umps.api.entity.SysUserRole;
 import com.cloud.river.umps.biz.mapper.SysUserRoleMapper;
 import com.cloud.river.umps.biz.service.SysUserRoleService;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
@@ -28,7 +30,9 @@ import org.springframework.stereotype.Service;
  * @author River
  * @date 2019-03-25 18:38:44
  */
+@Slf4j
 @Service
+@AllArgsConstructor
 public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole> implements SysUserRoleService {
 
     @Override

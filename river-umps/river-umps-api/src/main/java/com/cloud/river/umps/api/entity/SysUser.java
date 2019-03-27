@@ -17,6 +17,8 @@
 package com.cloud.river.umps.api.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -29,7 +31,7 @@ import java.time.LocalDateTime;
  * @date 2019-03-25 18:39:03
  */
 @Data
-public class SysUser implements Serializable {
+public class SysUser extends Model<SysUser> {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -20,7 +20,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cloud.river.umps.api.entity.SysRole;
 import com.cloud.river.umps.biz.mapper.SysRoleMapper;
 import com.cloud.river.umps.biz.service.SysRoleService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,10 +32,11 @@ import java.util.List;
  * @author River
  * @date 2019-03-26 17:27:28
  */
+@Slf4j
 @Service
+@AllArgsConstructor
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements SysRoleService {
-    @Autowired
-    SysRoleMapper sysRoleMapper;
+    private final SysRoleMapper sysRoleMapper;
     /**
      * 通过用户ID，查询角色信息
      *

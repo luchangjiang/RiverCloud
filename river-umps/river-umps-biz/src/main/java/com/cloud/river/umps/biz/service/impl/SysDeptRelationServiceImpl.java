@@ -23,6 +23,8 @@ import com.cloud.river.umps.api.entity.SysDept;
 import com.cloud.river.umps.biz.mapper.SysDeptRelationMapper;
 import com.cloud.river.umps.biz.service.SysDeptRelationService;
 import com.cloud.river.umps.api.entity.SysDeptRelation;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,10 +38,11 @@ import java.util.stream.Collectors;
  * @author River
  * @date 2019-03-26 11:13:01
  */
+@Slf4j
 @Service
+@AllArgsConstructor
 public class SysDeptRelationServiceImpl extends ServiceImpl<SysDeptRelationMapper, SysDeptRelation> implements SysDeptRelationService {
-    @Autowired
-    SysDeptRelationMapper sysDeptRelationMapper;
+    private final SysDeptRelationMapper sysDeptRelationMapper;
     /**
      * 维护部门关系
      *

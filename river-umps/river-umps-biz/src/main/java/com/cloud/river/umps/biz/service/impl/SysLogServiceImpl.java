@@ -22,6 +22,8 @@ import com.cloud.river.umps.biz.service.SysLogService;
 import com.cloud.river.umps.api.entity.SysLog;
 import com.cloud.river.umps.api.vo.LogVO;
 import com.cloud.river.common.core.constant.CommonConstants;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -34,7 +36,9 @@ import java.util.List;
  * @author River
  * @date 2019-03-25 19:53:37
  */
+@Slf4j
 @Service
+@AllArgsConstructor
 public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements SysLogService {
 
     @Override

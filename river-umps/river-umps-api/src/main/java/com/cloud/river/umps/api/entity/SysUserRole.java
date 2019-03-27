@@ -17,12 +17,9 @@
 package com.cloud.river.umps.api.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.io.Serializable;
 
 /**
  * 用户角色
@@ -31,7 +28,8 @@ import java.io.Serializable;
  * @date 2019-03-25 18:38:44
  */
 @Data
-public class SysUserRole implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+public class SysUserRole extends Model<SysUserRole> {
     private static final long serialVersionUID = 1L;
     /**
    * 用户ID

@@ -19,7 +19,6 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-extension</artifactId>
-            <version>3.0.1</version>
         </dependency>
     </dependencies>
 </project>

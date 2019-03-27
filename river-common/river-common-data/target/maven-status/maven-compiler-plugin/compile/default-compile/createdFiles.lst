@@ -1,0 +1,9 @@
+com\cloud\river\common\data\tenant\TenantContextHolderFilter.class
+com\cloud\river\common\data\tenant\TenantContextHolder.class
+com\cloud\river\common\data\datascope\DataScope.class
+com\cloud\river\common\data\mybatis\MybatisPlusConfig.class
+com\cloud\river\common\data\enums\DataScopeTypeEnum.class
+com\cloud\river\common\data\datascope\DataScopeInterceptor.class
+com\cloud\river\common\data\tenant\RiverTenantConfigProperties.class
+com\cloud\river\common\data\cache\RedisTemplateConfig.class
+com\cloud\river\common\data\tenant\RiverTenantHandler.class

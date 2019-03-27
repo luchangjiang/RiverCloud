@@ -26,6 +26,8 @@ import com.cloud.river.umps.biz.service.SysDeptRelationService;
 import com.cloud.river.umps.biz.service.SysDeptService;
 import com.cloud.river.umps.api.dto.DeptTree;
 import com.cloud.river.umps.api.entity.SysDept;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,10 +41,11 @@ import java.util.stream.Collectors;
  * @author River
  * @date 2019-03-26 11:10:39
  */
+@Slf4j
 @Service
+@AllArgsConstructor
 public class SysDeptServiceImpl extends ServiceImpl<SysDeptMapper, SysDept> implements SysDeptService {
-    @Autowired
-    SysDeptRelationService sysDeptRelationService;
+    private final SysDeptRelationService sysDeptRelationService;
 
     public List<DeptTree> getDeptTree(List<SysDept> sysDepts){
         List<DeptTree> deptTrees = sysDepts.stream()
