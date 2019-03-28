@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>RiverCloud</artifactId>
+        <groupId>com.cloud.river</groupId>
+        <version>1.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>river-gateway</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+        </dependency>
+        <!--动态路由组件-->
+        <dependency>
+            <groupId>com.cloud.river</groupId>
+            <artifactId>river-common-gateway</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <!--配置中心客户端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <!--验证码-->
+        <dependency>
+            <groupId>com.github.axet</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>${kaptcha.version}</version>
+        </dependency>
+        <!--hutool-->
+        <dependency>
+            <groupId>com.cloud.river</groupId>
+            <artifactId>river-common-core</artifactId>
+        </dependency>
+        <!--缓存-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--接口文档-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+    </dependencies>
+</project>

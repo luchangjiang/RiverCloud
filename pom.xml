@@ -5,7 +5,8 @@
 	<modules>
 		<module>river-umps</module>
 		<module>river-common</module>
-	</modules>
+        <module>river-gateway</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -30,6 +31,8 @@
 		<security.oauth.version>2.3.4.RELEASE</security.oauth.version>
 		<security.oauth.auto.version>2.1.2.RELEASE</security.oauth.auto.version>
 		<hutool.version>4.3.2</hutool.version>
+		<kaptcha.version>0.0.9</kaptcha.version>
+		<swagger.version>2.9.2</swagger.version>
 		<ttl.version>2.10.1</ttl.version>
 	</properties>
 

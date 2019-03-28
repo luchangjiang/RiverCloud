@@ -18,5 +18,6 @@
         <module>river-common-log</module>
         <module>river-common-security</module>
         <module>river-common-data</module>
+        <module>river-common-gateway</module>
     </modules>
 </project>
