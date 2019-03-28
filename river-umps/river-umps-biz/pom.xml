@@ -37,6 +37,11 @@
             <artifactId>river-common-gateway</artifactId>
             <version>${parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.cloud.river</groupId>
+            <artifactId>river-common-swagger</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
         <!--eureka 客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

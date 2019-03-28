@@ -19,5 +19,6 @@
         <module>river-common-security</module>
         <module>river-common-data</module>
         <module>river-common-gateway</module>
+        <module>river-common-swagger</module>
     </modules>
 </project>
