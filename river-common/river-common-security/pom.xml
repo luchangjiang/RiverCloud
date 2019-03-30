@@ -25,5 +25,9 @@
             <groupId>org.springframework.security.oauth.boot</groupId>
             <artifactId>spring-security-oauth2-autoconfigure</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.cloud.river</groupId>
+            <artifactId>river-umps-api</artifactId>
+        </dependency>
     </dependencies>
 </project>
