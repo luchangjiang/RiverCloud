@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
  * @author: River
  * @create: 2019-03-26 08:46
  **/
-@FeignClient(value = ServiceNameConstants.RIVER_ADMIN)
+@FeignClient(value = ServiceNameConstants.RIVER_BIZ)
 public interface RemoteLogService {
     @PostMapping("/log/save")
     R<Boolean> saveLog(@RequestBody SysLog sysLog, @RequestHeader (SecurityConstants.FROM) String from);

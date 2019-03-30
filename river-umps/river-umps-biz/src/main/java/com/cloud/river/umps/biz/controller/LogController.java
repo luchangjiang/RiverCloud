@@ -23,6 +23,7 @@ import com.cloud.river.common.log.annotation.Sys_Log;
 import com.cloud.river.umps.api.entity.SysLog;
 import com.cloud.river.umps.api.vo.LogVO;
 import com.cloud.river.umps.biz.service.SysLogService;
+import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,78 +38,54 @@ import java.util.List;
  */
 @RestController
 @AllArgsConstructor
-@RequestMapping("/syslog")
-public class SysLogController {
-
+@RequestMapping("/log")
+@Api(value="log", description = "日志管理模块")
+public class LogController {
     private final SysLogService sysLogService;
 
     /**
-       * 分页查询
-       * @param page 分页对象
-       * @param sysLog 系统日志
-       * @return
-       */
+    * 分页查询
+    * @param page 分页对象
+    * @param sysLog 系统日志
+    * @return
+    */
 
-      @GetMapping("/page")
-      public R getSysLogPage(Page page, SysLog sysLog) {
-        return  new R<>(sysLogService.page(page, Wrappers.query(sysLog)));
-      }
+    @GetMapping("/page")
+    public R getSysLogPage(Page page, SysLog sysLog) {
+    return  new R<>(sysLogService.page(page, Wrappers.query(sysLog)));
+    }
 
-
-    /**
-       * 通过id查询系统日志
-       * @param id id
-       * @return R
-       */
-      @GetMapping("/{id}")
-      public R getById(@PathVariable("id") Long id){
-        return new R<>(sysLogService.getById(id));
-      }
 
     /**
-       * 新增系统日志
-       * @param sysLog 系统日志
-       * @return R
-       */
-      @Sys_Log("新增系统日志")
-      @PostMapping
-      public R save(@RequestBody SysLog sysLog){
-        return new R<>(sysLogService.save(sysLog));
-      }
+    * 通过id查询系统日志
+    * @param id id
+    * @return R
+    */
+    @GetMapping("/{id}")
+    public R getById(@PathVariable("id") Long id){
+    return new R<>(sysLogService.getById(id));
+    }
 
     /**
-         * 批量插入前端异常日志
-         *
-         * @param logVos 日志实体
-         * @return success/false
-         */
+    * 新增系统日志
+    * @param sysLog 系统日志
+    * @return R
+    */
+    @Sys_Log("新增系统日志")
+    @PostMapping("/save")
+    public R save(@RequestBody SysLog sysLog){
+    return new R<>(sysLogService.save(sysLog));
+    }
+
+     /**
+     * 批量插入前端异常日志
+     *
+     * @param logVos 日志实体
+     * @return success/false
+     */
       @Sys_Log("批量新增系统日志")
-      @PostMapping
+      @PostMapping("/logs")
       public R saveBatchLogs(@RequestBody List<LogVO> logVos){
           return new R<>(sysLogService.saveBatchLogs(logVos));
       }
-
-    /**
-       * 修改系统日志
-       * @param sysLog 系统日志
-       * @return R
-       */
-
-      @Sys_Log("修改系统日志")
-      @PutMapping
-      public R updateById(@RequestBody SysLog sysLog){
-        return new R<>(sysLogService.updateById(sysLog));
-      }
-
-    /**
-       * 通过id删除系统日志
-       * @param id id
-       * @return R
-       */
-      @Sys_Log("删除系统日志")
-      @DeleteMapping("/{id}")
-      public R removeById(@PathVariable Long id){
-        return new R<>(sysLogService.removeById(id));
-      }
-
 }

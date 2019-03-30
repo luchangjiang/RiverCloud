@@ -39,7 +39,7 @@ public class SysRoleMenuServiceImpl extends ServiceImpl<SysRoleMenuMapper, SysRo
     @Override
     @Transactional(rollbackFor = Exception.class)
     @CacheEvict(value="menu_details", key = "#roleId + '_menu'" )
-    public Boolean saveRoleMenus(String role, Integer roleId, String menuIds){
+    public Boolean saveRoleMenus(Integer roleId, String menuIds){
         this.remove(Wrappers.<SysRoleMenu>query().lambda()
                 .eq(SysRoleMenu::getRoleId, roleId));
 

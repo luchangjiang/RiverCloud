@@ -45,7 +45,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @RequestMapping("/user")
 @Api(value="user", description = "用户管理模块")
-public class SysUserController {
+public class UserController {
     private final SysUserService sysUserService;
 
     /**

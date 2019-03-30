@@ -13,7 +13,6 @@ import lombok.EqualsAndHashCode;
  **/
 @Data
 @EqualsAndHashCode(callSuper = true)
-@AllArgsConstructor
 public class MenuTree extends TreeNode{
     private String icon;
     private String name;
@@ -27,6 +26,8 @@ public class MenuTree extends TreeNode{
     private String code;
     private String label;
     private Integer sort;
+
+    public MenuTree(){}
 
     public MenuTree(MenuVO menuVO){
         this.id = menuVO.getMenuId();

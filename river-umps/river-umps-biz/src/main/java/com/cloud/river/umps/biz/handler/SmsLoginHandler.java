@@ -35,7 +35,7 @@ public class SmsLoginHandler extends AbstractLoginHandler {
     /**
      * 通过mobile 获取用户信息
      *
-     * @param identify
+     * @param mobile
      * @return
      */
     @Override

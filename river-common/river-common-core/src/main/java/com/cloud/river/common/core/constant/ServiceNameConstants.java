@@ -33,7 +33,7 @@ public interface ServiceNameConstants {
 	/**
 	 * UMPS模块
 	 */
-	String RIVER_ADMIN = "river-admin";
+	String RIVER_BIZ = "river-biz";
 
 	/**
 	 * 分布式事务协调服务
