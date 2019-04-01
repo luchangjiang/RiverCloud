@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.cloud.river.common.security.feign.RiverFeignConfiguration,\
+  com.cloud.river.common.security.service.RiverUserDetailsServiceImpl

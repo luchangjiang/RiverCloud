@@ -20,5 +20,6 @@
         <module>river-common-data</module>
         <module>river-common-gateway</module>
         <module>river-common-swagger</module>
+        <module>river-common-minio</module>
     </modules>
 </project>

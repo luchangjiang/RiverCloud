@@ -12,16 +12,16 @@ import com.cloud.river.umps.api.entity.SysMenu;
 import com.cloud.river.umps.api.util.TreeUtil;
 import com.cloud.river.umps.api.vo.MenuVO;
 import com.cloud.river.umps.biz.service.SysMenuService;
-import com.cloud.river.umps.biz.service.SysRoleMenuService;
 import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.configuration.tree.TreeUtils;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
