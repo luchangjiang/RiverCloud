@@ -28,7 +28,6 @@ import com.cloud.river.umps.api.dto.DeptTree;
 import com.cloud.river.umps.api.entity.SysDept;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -74,7 +73,7 @@ public class SysDeptServiceImpl extends ServiceImpl<SysDeptMapper, SysDept> impl
      * @return
      */
     public List<DeptTree> getUserTree(){
-        int deptId = SecurityUtils.getUser().getDetpId();
+        int deptId = SecurityUtils.getUser().getDeptId();
         List<Integer> descendantIdList = sysDeptRelationService.list(Wrappers.<SysDeptRelation>query().lambda()
                 .eq(SysDeptRelation::getAncestor, deptId))
                 .stream()

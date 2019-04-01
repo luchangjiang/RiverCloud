@@ -3,26 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
+        <artifactId>RiverCloud</artifactId>
         <groupId>com.cloud.river</groupId>
-        <artifactId>river-umps</artifactId>
         <version>1.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>river-umps-biz</artifactId>
+    <artifactId>river-auth</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.cloud.river</groupId>
             <artifactId>river-umps-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.cloud.river</groupId>
-            <artifactId>river-common-log</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.cloud.river</groupId>
-            <artifactId>river-common-core</artifactId>
         </dependency>
         <dependency>
             <groupId>com.cloud.river</groupId>
@@ -32,40 +25,25 @@
             <groupId>com.cloud.river</groupId>
             <artifactId>river-common-data</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.cloud.river</groupId>
-            <artifactId>river-common-gateway</artifactId>
-            <version>${parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.cloud.river</groupId>
-            <artifactId>river-common-swagger</artifactId>
-            <version>${parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.cloud.river</groupId>
-            <artifactId>river-common-minio</artifactId>
-            <version>${parent.version}</version>
-        </dependency>
-        <!--eureka 客户端-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <!--配置中心客户端-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-        <!--mybatis-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
-        <!--数据库-->
+        <!--mysql 驱动-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--JDBC相关-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <!--freemarker-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <!--spring security 、oauth、jwt依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-security</artifactId>
         </dependency>
         <!--web 模块-->
         <dependency>
@@ -92,7 +70,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
         </plugins>
     </build>
 </project>

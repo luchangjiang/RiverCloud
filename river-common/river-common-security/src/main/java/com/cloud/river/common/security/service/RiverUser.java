@@ -16,7 +16,7 @@ public class RiverUser extends User {
     @Getter
     private Integer id;
     @Getter
-    private Integer detpId;
+    private Integer deptId;
     @Getter
     private Integer tenantId;
 
@@ -25,7 +25,7 @@ public class RiverUser extends User {
                      Collection<? extends GrantedAuthority> authorities) {
         super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
         this.id = id;
-        this.detpId = detpId;
+        this.deptId = detpId;
         this.tenantId = tenantId;
     }
 }

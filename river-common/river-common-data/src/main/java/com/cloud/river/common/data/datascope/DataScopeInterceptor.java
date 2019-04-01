@@ -83,13 +83,13 @@ public class DataScopeInterceptor extends AbstractSqlParserHandler implements In
 
             if(DataScopeTypeEnum.OWN_CHILD_LEVEL.equals(dsType)){
                 deptIds = Db.use(dataSource)
-                        .findBy("sys_dept_relation", "ancestor", SecurityUtils.getUser().getDetpId())
+                        .findBy("sys_dept_relation", "ancestor", SecurityUtils.getUser().getDeptId())
                         .stream().map(entity -> entity.getInt("descendant"))
                         .collect(Collectors.toList());
             }
 
             if(DataScopeTypeEnum.OWN_LEVEL.equals(dsType)){
-                deptIds.add(SecurityUtils.getUser().getDetpId());
+                deptIds.add(SecurityUtils.getUser().getDeptId());
             }
         }
 

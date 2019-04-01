@@ -32,8 +32,8 @@ public class SecurityUtils {
      * @param authentication
      * @return RiverUser
      * <p>
-     * 获取当前用户的全部信息 EnablePigxResourceServer true
-     * 获取当前用户的用户名 EnablePigxResourceServer false
+     * 获取当前用户的全部信息 EnableRiverResourceServer true
+     * 获取当前用户的用户名 EnableRiverResourceServer false
      */
     public RiverUser getUser(Authentication authentication) {
         Object principal = authentication.getPrincipal();
