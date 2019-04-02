@@ -36,7 +36,7 @@ import java.util.List;
 @Configuration
 @RefreshScope
 @ConditionalOnExpression("!'${security.oauth2.client.ignore-urls}'.isEmpty()")
-@ConfigurationProperties(prefix = "security.oauth2.client")
+@ConfigurationProperties(prefix = "org.springframework.security.oauth2.client")
 public class PermitAllUrlProperties {
 	private List<String> ignoreUrls = new ArrayList<>();
 }

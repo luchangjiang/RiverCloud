@@ -1,5 +1,5 @@
 server:
-  port: 3000
+  port: 7300
 
 spring:
   application:
@@ -12,7 +12,7 @@ spring:
       profile: ${spring.profiles.active}
       discovery:
         enabled: true
-        service-id: pigx-config
+        service-id: river-config
   main:
     allow-bean-definition-overriding: true
   profiles:
@@ -24,4 +24,4 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://river:river@river-eureka:8761/eureka/
+      defaultZone: http://river:river@river-eureka:7261/eureka/

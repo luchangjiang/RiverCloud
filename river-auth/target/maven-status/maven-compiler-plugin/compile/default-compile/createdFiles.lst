@@ -1,0 +1,7 @@
+com\cloud\river\auth\handler\RiverAuthenticationFailureEvenHandler.class
+com\cloud\river\auth\config\AuthorizationServerConfig.class
+com\cloud\river\auth\endpoint\RiverTokenEndpoint.class
+com\cloud\river\auth\RiverAuthApplication.class
+com\cloud\river\auth\config\WebSecurityConfigurer.class
+com\cloud\river\auth\config\AuthorizationServerConfig$1.class
+com\cloud\river\auth\handler\RiverAuthenticationSuccessEvenHandler.class

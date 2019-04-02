@@ -1,0 +1,9 @@
+com\cloud\river\gateway\config\RouterFunctionConfiguration.class
+com\cloud\river\gateway\RiverGatewayApplication.class
+com\cloud\river\gateway\handler\SwaggerResourceHandler.class
+com\cloud\river\gateway\handler\ImageCodeHandler.class
+com\cloud\river\gateway\handler\HystrixFallbackHandler.class
+com\cloud\river\gateway\handler\SwaggerUiHandler.class
+com\cloud\river\gateway\config\FilterIgnorePropertiesConfig.class
+com\cloud\river\gateway\handler\SwaggerSecurityHandler.class
+com\cloud\river\gateway\config\SwaggerProvider.class

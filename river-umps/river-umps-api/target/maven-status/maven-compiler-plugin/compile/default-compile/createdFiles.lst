@@ -1,9 +1,12 @@
+com\cloud\river\umps\api\feign\RemoteUserService.class
 com\cloud\river\umps\api\entity\SysDict.class
+com\cloud\river\umps\api\util\TreeUtil.class
 com\cloud\river\umps\api\entity\SysRoleMenu.class
 com\cloud\river\umps\api\entity\SysOauthClientDetails.class
 com\cloud\river\umps\api\entity\SysLog.class
 com\cloud\river\umps\api\entity\SysUserRole.class
 com\cloud\river\umps\api\dto\MenuTree.class
+com\cloud\river\umps\api\feign\RemoteTokenService.class
 com\cloud\river\umps\api\entity\SysDeptRelation.class
 com\cloud\river\umps\api\entity\SysRouteConf.class
 com\cloud\river\umps\api\vo\LogVO.class

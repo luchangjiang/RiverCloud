@@ -38,7 +38,7 @@ public class RouterFunctionConfiguration {
                     .and(RequestPredicates.accept(MediaType.ALL)), swaggerResourceHandler)
             .andRoute(RequestPredicates.GET("/swagger-resources/configuration/ui")
                     .and(RequestPredicates.accept(MediaType.ALL)), swaggerUiHandler)
-            .andRoute(RequestPredicates.GET("/swagger-resources/configuration/security")
+            .andRoute(RequestPredicates.GET("/swagger-resources/configuration/org.springframework.security")
                     .and(RequestPredicates.accept(MediaType.ALL)), swaggerSecurityHandler);
     }
 }

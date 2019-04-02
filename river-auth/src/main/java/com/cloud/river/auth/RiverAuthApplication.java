@@ -14,6 +14,6 @@ import org.springframework.cloud.client.SpringCloudApplication;
 @EnableRiverFeignClients
 public class RiverAuthApplication {
     public static void main(String[] args) {
-        SpringApplication.run(RiverAuthApplication.class);
+        SpringApplication.run(RiverAuthApplication.class, args);
     }
 }

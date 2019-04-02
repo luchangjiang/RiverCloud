@@ -1,5 +1,5 @@
 server:
-  port: 4000
+  port: 7200
 
 spring:
   application:
@@ -25,4 +25,4 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://river:river@river-eureka:8761/eureka/
+      defaultZone: http://river:river@river-eureka:7261/eureka/

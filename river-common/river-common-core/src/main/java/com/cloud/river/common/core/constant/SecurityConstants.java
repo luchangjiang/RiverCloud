@@ -43,7 +43,7 @@ public interface SecurityConstants {
 	/**
 	 * 前缀
 	 */
-	String PIGX_PREFIX = "river_";
+	String RIVER_PREFIX = "river_";
 
 	/**
 	 * oauth 相关前缀
@@ -52,7 +52,7 @@ public interface SecurityConstants {
 	/**
 	 * 项目的license
 	 */
-	String PIGX_LICENSE = "made by river";
+	String RIVER_LICENSE = "made by river";
 
 	/**
 	 * 内部

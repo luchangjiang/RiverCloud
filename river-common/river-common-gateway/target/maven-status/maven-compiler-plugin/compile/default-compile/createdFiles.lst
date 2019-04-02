@@ -1,0 +1,5 @@
+com\cloud\river\common\gateway\annotation\EnableRiverDynamicRoute.class
+com\cloud\river\common\gateway\support\RedisRouteDefinitionWriter.class
+com\cloud\river\common\gateway\configuration\DynamicRouteAutoConfiguration.class
+com\cloud\river\common\gateway\support\DynamicRouteInitEvent.class
+com\cloud\river\common\gateway\vo\RouteDefinitionVo.class

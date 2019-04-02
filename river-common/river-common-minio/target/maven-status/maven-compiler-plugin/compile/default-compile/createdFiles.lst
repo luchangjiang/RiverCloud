@@ -1,0 +1,6 @@
+com\cloud\river\common\minio\http\MinioEndpoint.class
+com\cloud\river\common\minio\MinioAutoConfiguration.class
+com\cloud\river\common\minio\service\MinioTemplate.class
+com\cloud\river\common\minio\MinioProperties.class
+com\cloud\river\common\minio\vo\MinioObject.class
+com\cloud\river\common\minio\vo\MinioItem.class

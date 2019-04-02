@@ -62,7 +62,7 @@ public class DataScopeInterceptor extends AbstractSqlParserHandler implements In
         if(CollUtil.isEmpty(deptIds)){
             List<Integer> roles = SecurityUtils.getRoles();
             if(CollUtil.isEmpty(roles)){
-                throw new CheckedException("auto datascope, please setup security details true");
+                throw new CheckedException("auto datascope, please setup org.springframework.security details true");
             }
 
             Entity query = Db.use(dataSource)

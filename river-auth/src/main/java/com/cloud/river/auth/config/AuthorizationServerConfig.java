@@ -76,7 +76,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Bean
     public TokenStore tokenStore() {
         RedisTokenStore tokenStore = new RedisTokenStore(redisConnectionFactory);
-        tokenStore.setPrefix(SecurityConstants.PIGX_PREFIX + SecurityConstants.OAUTH_PREFIX);
+        tokenStore.setPrefix(SecurityConstants.RIVER_PREFIX + SecurityConstants.OAUTH_PREFIX);
         tokenStore.setAuthenticationKeyGenerator(new DefaultAuthenticationKeyGenerator() {
             @Override
             public String extractKey(OAuth2Authentication authentication) {
@@ -105,7 +105,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
             additionalInfo.put("username", riverUser.getUsername());
             additionalInfo.put("dept_id", riverUser.getDeptId());
             additionalInfo.put("tenant_id", riverUser.getTenantId());
-            additionalInfo.put("license", SecurityConstants.PIGX_LICENSE);
+            additionalInfo.put("license", SecurityConstants.RIVER_LICENSE);
             ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInfo);
             return accessToken;
         };

@@ -7,6 +7,8 @@
 		<module>river-common</module>
         <module>river-gateway</module>
 		<module>river-auth</module>
+		<module>river-config</module>
+		<module>river-eureka</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -92,7 +94,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!--稳定版本，替代spring security bom内置-->
+			<!--稳定版本，替代spring org.springframework.security bom内置-->
 			<dependency>
 				<groupId>org.springframework.security.oauth</groupId>
 				<artifactId>spring-security-oauth2</artifactId>

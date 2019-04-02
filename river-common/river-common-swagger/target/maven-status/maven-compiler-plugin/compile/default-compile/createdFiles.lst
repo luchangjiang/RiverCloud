@@ -1,0 +1,6 @@
+com\cloud\river\common\swagger\annotation\EnableRiverSwagger2.class
+com\cloud\river\common\swagger\config\SwaggerProperties$Contact.class
+com\cloud\river\common\swagger\config\SwaggerAutoConfiguration.class
+com\cloud\river\common\swagger\config\SwaggerProperties$AuthorizationScope.class
+com\cloud\river\common\swagger\config\SwaggerProperties$Authorization.class
+com\cloud\river\common\swagger\config\SwaggerProperties.class

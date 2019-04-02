@@ -1,9 +1,9 @@
 package com.cloud.river.common.security.component;
 
 import com.cloud.river.common.core.constant.SecurityConstants;
+import com.cloud.river.common.security.annotation.EnableRiverResourceServer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.MutablePropertyValues;
-import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;

@@ -35,6 +35,7 @@ import java.net.URI;
 public class DynamicRouteInitRunner {
     private final RedisTemplate redisTemplate;
     private final SysRouteConfService routeConfService;
+
     @Async
     @Order
     @EventListener({WebServerInitializedEvent.class, DynamicRouteInitEvent.class})
