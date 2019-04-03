@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>com.cloud.river</groupId>
-            <artifactId>river-umps-api</artifactId>
+            <artifactId>river-upms-api</artifactId>
         </dependency>
         <!--安全依赖获取上下文信息-->
         <dependency>

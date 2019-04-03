@@ -10,8 +10,8 @@ import org.springframework.cloud.client.SpringCloudApplication;
  * @author: River
  * @create: 2019-04-01 10:57
  **/
-@SpringCloudApplication
 @EnableRiverFeignClients
+@SpringCloudApplication
 public class RiverAuthApplication {
     public static void main(String[] args) {
         SpringApplication.run(RiverAuthApplication.class, args);

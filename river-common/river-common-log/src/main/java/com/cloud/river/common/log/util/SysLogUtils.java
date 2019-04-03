@@ -4,7 +4,7 @@ import cn.hutool.core.util.URLUtil;
 import cn.hutool.http.HttpUtil;
 import com.cloud.river.common.core.constant.CommonConstants;
 import com.cloud.river.common.core.util.WebUtils;
-import com.cloud.river.umps.api.entity.SysLog;
+import com.cloud.river.upms.api.entity.SysLog;
 import lombok.experimental.UtilityClass;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

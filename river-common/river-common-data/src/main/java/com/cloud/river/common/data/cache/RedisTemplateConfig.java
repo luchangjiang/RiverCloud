@@ -26,7 +26,7 @@ public class RedisTemplateConfig {
     RedisConnectionFactory redisConnectionFactory;
 
     @Bean
-    public RedisTemplate<String, Object> redisTemplate(){
+    public RedisTemplate<String, Object> riverRedisTemplate(){
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());

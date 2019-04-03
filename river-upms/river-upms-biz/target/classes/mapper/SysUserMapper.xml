@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~
+  ~      Copyright (c) 2018-2025, lengleng All rights reserved.
+  ~
+  ~  Redistribution and use in source and binary forms, with or without
+  ~  modification, are permitted provided that the following conditions are met:
+  ~
+  ~ Redistributions of source code must retain the above copyright notice,
+  ~  this list of conditions and the following disclaimer.
+  ~  Redistributions in binary form must reproduce the above copyright
+  ~  notice, this list of conditions and the following disclaimer in the
+  ~  documentation and/or other materials provided with the distribution.
+  ~  Neither the name of the pig4cloud.com developer nor the names of its
+  ~  contributors may be used to endorse or promote products derived from
+  ~  this software without specific prior written permission.
+  ~  Author: lengleng (wangiegie@gmail.com)
+  ~
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cloud.river.upms.biz.mapper.SysUserMapper">
+
+  <resultMap id="baseSysUserMap" type="com.cloud.river.upms.api.entity.SysUser">
+                  <id property="userId" column="user_id"/>
+                        <result property="username" column="username"/>
+                        <result property="password" column="password"/>
+                        <result property="salt" column="salt"/>
+                        <result property="phone" column="phone"/>
+                        <result property="avatar" column="avatar"/>
+                        <result property="deptId" column="dept_id"/>
+                        <result property="createTime" column="create_time"/>
+                        <result property="updateTime" column="update_time"/>
+                        <result property="lockFlag" column="lock_flag"/>
+                        <result property="delFlag" column="del_flag"/>
+                        <result property="wxOpenid" column="wx_openid"/>
+                        <result property="qqOpenid" column="qq_openid"/>
+                        <result property="tenantId" column="tenant_id"/>
+                        <collection property="roleList" ofType="SysRole"
+                                    select="com.cloud.river.upms.biz.mapper.SysRoleMapper.listRolesByUserId" column="user_id">
+                        </collection>
+            </resultMap>
+
+      <!-- userVo结果集 -->
+      <resultMap id="userVOResultMap" type="com.cloud.river.upms.api.vo.UserVO">
+            <id column="user_id" property="userId"/>
+            <result column="username" property="username"/>
+            <result column="password" property="password"/>
+            <result column="salt" property="salt"/>
+            <result column="phone" property="phone"/>
+            <result column="avatar" property="avatar"/>
+            <result column="wx_openid" property="wxOpenid"/>
+            <result column="qq_openid" property="qqOpenid"/>
+            <result column="ucreate_time" property="createTime"/>
+            <result column="uupdate_time" property="updateTime"/>
+            <result column="lock_flag" property="lockFlag"/>
+            <result column="udel_flag" property="delFlag"/>
+            <result column="deptId" property="deptId"/>
+            <result column="tenantId" property="tenantId"/>
+            <result column="deptName" property="deptName"/>
+            <collection property="roleList" ofType="com.cloud.river.upms.api.entity.SysRole">
+                  <id column="role_id" property="roleId"/>
+                  <result column="role_name" property="roleName"/>
+                  <result column="role_code" property="roleCode"/>
+                  <result column="role_desc" property="roleDesc"/>
+                  <result column="rcreate_time" property="createTime"/>
+                  <result column="rupdate_time" property="updateTime"/>
+            </collection>
+      </resultMap>
+
+      <sql id="userRoleSql">
+		usr.user_id,
+		usr.username,
+		usr.`password`,
+		usr.salt,
+		usr.phone,
+		usr.avatar,
+		usr.wx_openid,
+		usr.qq_openid,
+		usr.dept_id,
+		usr.create_time AS ucreate_time,
+		usr.update_time AS uupdate_time,
+		usr.del_flag AS udel_flag,
+		usr.lock_flag AS lock_flag,
+		usr.dept_id AS deptId,
+		usr.tenant_id AS tenantId,
+		r.role_id,
+		r.role_name,
+		r.role_code,
+		r.role_desc,
+		r.create_time AS rcreate_time,
+		r.update_time AS rupdate_time,
+		d.dept_id,
+		d.name deptName
+	  </sql>
+
+      <select id="getUserVOByUsername" resultMap="userVOResultMap">
+          SELECT
+          <include refid="userRoleSql"/>
+          FROM sys_user AS usr
+          LEFT JOIN sys_user_role AS ur ON ur.user_id=usr.user_id
+          LEFT JOIN sys_role AS r ON r.role_id=ur.role_id
+          LEFT JOIN sys_dept AS d ON d.dept_id=usr.dept_id
+            WHERE usr.username=#{username}
+      </select>
+
+      <select id="getUserVOsPage" resultMap="userVOResultMap">
+          SELECT
+          <include refid="userRoleSql"/>
+          FROM sys_user AS usr
+          LEFT JOIN sys_user_role AS ur ON ur.user_id=usr.user_id
+          LEFT JOIN sys_role AS r ON r.role_id=ur.role_id
+          <where>
+              <if test="query.username != null and query.username != ''">
+                  and usr.username like CONCAT('%',#{query.username},'%')
+              </if>
+              <if test="query.deptId !=null and query.deptId != ''">
+                  and usr.dept_id=#{query.deptId}
+              </if>
+          </where>
+          ORDER BY usr.create_time DESC
+      </select>
+
+    <select id="getUserVOById" resultMap="userVOResultMap">
+        SELECT
+        <include refid="userRoleSql"/>
+        FROM sys_user AS usr
+        LEFT JOIN sys_user_role AS ur ON ur.user_id=usr.user_id
+        LEFT JOIN sys_role AS r ON r.role_id=ur.role_id
+        WHERE usr.user_id=#{userId}
+    </select>
+</mapper>

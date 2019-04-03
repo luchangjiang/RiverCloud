@@ -16,6 +16,10 @@
             <groupId>com.cloud.river</groupId>
             <artifactId>river-common-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.cloud.river</groupId>
+            <artifactId>river-upms-api</artifactId>
+        </dependency>
         <!--安全模块-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -25,9 +29,6 @@
             <groupId>org.springframework.security.oauth.boot</groupId>
             <artifactId>spring-security-oauth2-autoconfigure</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.cloud.river</groupId>
-            <artifactId>river-umps-api</artifactId>
-        </dependency>
+
     </dependencies>
 </project>

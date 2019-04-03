@@ -2,7 +2,7 @@ package com.cloud.river.common.log;
 
 import com.cloud.river.common.log.aspect.SysLogAspect;
 import com.cloud.river.common.log.event.SysLogListener;
-import com.cloud.river.umps.api.feign.RemoteLogService;
+import com.cloud.river.upms.api.feign.RemoteLogService;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.ApplicationEventPublisher;

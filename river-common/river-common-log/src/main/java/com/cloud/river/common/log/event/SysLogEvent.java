@@ -1,6 +1,6 @@
 package com.cloud.river.common.log.event;
 
-import com.cloud.river.umps.api.entity.SysLog;
+import com.cloud.river.upms.api.entity.SysLog;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

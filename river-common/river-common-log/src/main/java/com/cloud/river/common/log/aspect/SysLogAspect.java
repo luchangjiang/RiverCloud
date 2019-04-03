@@ -3,7 +3,7 @@ package com.cloud.river.common.log.aspect;
 import com.cloud.river.common.log.annotation.Sys_Log;
 import com.cloud.river.common.log.event.SysLogEvent;
 import com.cloud.river.common.log.util.SysLogUtils;
-import com.cloud.river.umps.api.entity.SysLog;
+import com.cloud.river.upms.api.entity.SysLog;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

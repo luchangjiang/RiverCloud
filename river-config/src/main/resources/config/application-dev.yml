@@ -13,7 +13,7 @@ redis:
   password:
   timeout: 2000
   # 服务或应用名
-  sysName: river-upms-biz
+  sysName: river-redis
   enable: true
   database: 0
 

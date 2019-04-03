@@ -50,7 +50,7 @@ public class RiverTokenEndpoint {
      * @return ModelAndView
      */
     @GetMapping("/login")
-    public ModelAndView require(){ return new ModelAndView("ftl/login"); }
+    public ModelAndView require(){ return new ModelAndView("templates.ftl/login"); }
 
     /**
      * 退出token

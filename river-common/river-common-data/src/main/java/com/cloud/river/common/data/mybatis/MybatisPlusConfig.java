@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
 import com.cloud.river.common.data.datascope.DataScopeInterceptor;
 import com.cloud.river.common.data.tenant.RiverTenantHandler;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,18 +24,30 @@ import java.util.List;
  * @create: 2019-03-27 10:31
  **/
 @Configuration
-@ConditionalOnClass(MybatisPlusConfig.class)
-@MapperScan("com.cloud.river.*.mapper")
+@ConditionalOnBean(DataSource.class)
+@MapperScan("com.cloud.river.**.mapper")
 public class MybatisPlusConfig {
 
+    /**
+     * 创建租户维护处理器对象
+     *
+     * @return 处理后的租户维护处理器
+     */
     @Bean
-    public RiverTenantHandler riverTenantHandler(){
+    @ConditionalOnMissingBean
+    public RiverTenantHandler pigxTenantHandler() {
         return new RiverTenantHandler();
     }
 
+    /**
+     * 分页插件
+     *
+     * @param tenantHandler 租户处理器
+     * @return PaginationInterceptor
+     */
     @Bean
     @ConditionalOnMissingBean
-    public PaginationInterceptor paginationInterceptor(RiverTenantHandler tenantHandler){
+    public PaginationInterceptor paginationInterceptor(RiverTenantHandler tenantHandler) {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
         List<ISqlParser> sqlParserList = new ArrayList<>();
         TenantSqlParser tenantSqlParser = new TenantSqlParser();
@@ -45,9 +57,15 @@ public class MybatisPlusConfig {
         return paginationInterceptor;
     }
 
+    /**
+     * 数据权限插件
+     *
+     * @param dataSource 数据源
+     * @return DataScopeInterceptor
+     */
     @Bean
     @ConditionalOnMissingBean
-    public DataScopeInterceptor dataScopeInterceptor(DataSource dataSource){
+    public DataScopeInterceptor dataScopeInterceptor(DataSource dataSource) {
         return new DataScopeInterceptor(dataSource);
     }
 

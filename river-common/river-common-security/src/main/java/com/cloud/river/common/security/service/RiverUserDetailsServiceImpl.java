@@ -1,13 +1,12 @@
 package com.cloud.river.common.security.service;
 
-import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
 import com.cloud.river.common.core.constant.CommonConstants;
 import com.cloud.river.common.core.constant.SecurityConstants;
 import com.cloud.river.common.core.util.R;
-import com.cloud.river.umps.api.dto.UserInfo;
-import com.cloud.river.umps.api.entity.SysUser;
-import com.cloud.river.umps.api.feign.RemoteUserService;
+import com.cloud.river.upms.api.dto.UserInfo;
+import com.cloud.river.upms.api.entity.SysUser;
+import com.cloud.river.upms.api.feign.RemoteUserService;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -52,7 +51,7 @@ public class RiverUserDetailsServiceImpl implements RiverUserDetailsService {
         }
 
         R<UserInfo> result = remoteUserService.info(username, SecurityConstants.FROM_IN);
-        UserDetails userDetails = getUserDetails((UserInfo)result.getData());
+        UserDetails userDetails = getUserDetails(result.getData());
         cache.put(username, userDetails);
         return userDetails;
     }
@@ -68,7 +67,7 @@ public class RiverUserDetailsServiceImpl implements RiverUserDetailsService {
             throw new UsernameNotFoundException("用户不存在");
         }
 
-        Set<String> dbAuthsSet = new HashSet<String>();
+        Set<String> dbAuthsSet = new HashSet<>();
         Arrays.stream(userInfo.getRoles()).forEach(roleId->{
             //获取角色
             dbAuthsSet.add(SecurityConstants.ROLE + roleId);

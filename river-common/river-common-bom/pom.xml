@@ -24,7 +24,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--pigx 工具包-->
             <dependency>
                 <groupId>com.cloud.river</groupId>
                 <artifactId>river-common-core</artifactId>
@@ -47,12 +46,27 @@
             </dependency>
             <dependency>
                 <groupId>com.cloud.river</groupId>
-                <artifactId>river-umps-api</artifactId>
+                <artifactId>river-common-gateway</artifactId>
                 <version>${river.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.cloud.river</groupId>
-                <artifactId>river-umps-biz</artifactId>
+                <artifactId>river-common-minio</artifactId>
+                <version>${river.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cloud.river</groupId>
+                <artifactId>river-common-swagger</artifactId>
+                <version>${river.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cloud.river</groupId>
+                <artifactId>river-upms-api</artifactId>
+                <version>${river.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cloud.river</groupId>
+                <artifactId>river-upms-biz</artifactId>
                 <version>${river.version}</version>
             </dependency>
             <!--jackson模块-->

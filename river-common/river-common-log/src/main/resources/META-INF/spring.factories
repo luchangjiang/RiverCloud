@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.river.cloud.rivercommon.log.LogAutoConfiguration
+    com.cloud.river.common.log.LogAutoConfiguration

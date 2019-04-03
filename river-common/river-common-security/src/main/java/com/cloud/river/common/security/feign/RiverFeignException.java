@@ -1,39 +1,57 @@
+/*
+ * *************************************************************************
+ *   Copyright (c) 2018-2025, dreamlu.net All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *
+ * Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ * Neither the name of the dreamlu.net developer nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ * Author: chunmeng.lu (qq596392912@gmail.com)
+ * *************************************************************************
+ */
+
 package com.cloud.river.common.security.feign;
 
 import com.cloud.river.common.core.constant.CommonConstants;
 import com.cloud.river.common.core.util.R;
-import lombok.Data;
 import lombok.Getter;
-import org.springframework.web.bind.annotation.DeleteMapping;
 
 /**
- * @program: RiverCloud
- * @description:
- * @author: River
- * @create: 2019-03-29 15:25
- **/
-@Data
+ * Fegin 异常
+ *
+ * @author L.cm
+ */
 public class RiverFeignException extends RuntimeException {
-    @Getter
-    private final R result;
+	@Getter
+	private final R result;
 
-    public RiverFeignException(R result){
-        super(result.getMsg());
-        this.result = result;
-    }
+	public RiverFeignException(R result) {
+		super(result.getMsg());
+		this.result = result;
+	}
 
-    public RiverFeignException(String message){
-        super(message);
-        this.result = R.builder().code(CommonConstants.FAIL)
-                .msg(message).build();
+	public RiverFeignException(String message) {
+		super(message);
+		this.result = R.builder()
+				.code(CommonConstants.FAIL)
+				.msg(message).build();
+	}
 
-    }
-
-    /**
-     * 提高性能
-     *
-     * @return {Throwable}
-     */
-    @Override
-    public Throwable fillInStackTrace(){ return this; }
+	/**
+	 * 提高性能
+	 *
+	 * @return {Throwable}
+	 */
+	@Override
+	public Throwable fillInStackTrace() {
+		return this;
+	}
 }

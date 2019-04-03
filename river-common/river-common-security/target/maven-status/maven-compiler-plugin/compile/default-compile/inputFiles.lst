@@ -31,6 +31,7 @@ D:\MyJava\MyDemo\RiverCloud\river-common\river-common-security\src\main\java\com
 D:\MyJava\MyDemo\RiverCloud\river-common\river-common-security\src\main\java\com\cloud\river\common\security\util\ConcurrentDateFormat.java
 D:\MyJava\MyDemo\RiverCloud\river-common\river-common-security\src\main\java\com\cloud\river\common\security\util\SecurityUtils.java
 D:\MyJava\MyDemo\RiverCloud\river-common\river-common-security\src\main\java\com\cloud\river\common\security\component\PermissionService.java
+D:\MyJava\MyDemo\RiverCloud\river-common\river-common-security\src\main\java\com\cloud\river\common\security\component\RiverResourceServerTokenRelayAutoConfiguration.java
 D:\MyJava\MyDemo\RiverCloud\river-common\river-common-security\src\main\java\com\cloud\river\common\security\service\RiverUser.java
 D:\MyJava\MyDemo\RiverCloud\river-common\river-common-security\src\main\java\com\cloud\river\common\security\handler\MobileLoginSuccessHandler.java
 D:\MyJava\MyDemo\RiverCloud\river-common\river-common-security\src\main\java\com\cloud\river\common\security\exception\MethodNotAllowedException.java

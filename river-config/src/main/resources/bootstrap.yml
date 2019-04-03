@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: @artifactId@
+    name: river-config
   profiles:
     active: native
   # 配置中心

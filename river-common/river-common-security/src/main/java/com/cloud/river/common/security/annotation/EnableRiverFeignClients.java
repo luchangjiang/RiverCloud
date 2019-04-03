@@ -13,7 +13,7 @@ public @interface EnableRiverFeignClients {
 
     String[] basePackages() default {"com.cloud.river"};
 
-    String[] basePackageClasses() default {};
+    Class<?>[] basePackageClasses() default {};
 
     Class<?>[] defaultConfiguration() default {};
 

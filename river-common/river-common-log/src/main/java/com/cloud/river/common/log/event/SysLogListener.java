@@ -1,8 +1,8 @@
 package com.cloud.river.common.log.event;
 
 import com.cloud.river.common.core.constant.SecurityConstants;
-import com.cloud.river.umps.api.entity.SysLog;
-import com.cloud.river.umps.api.feign.RemoteLogService;
+import com.cloud.river.upms.api.entity.SysLog;
+import com.cloud.river.upms.api.feign.RemoteLogService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;

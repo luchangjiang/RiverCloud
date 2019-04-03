@@ -107,8 +107,8 @@ public class RiverHystrixFeign {
 
 
 		private <T> T targetWithFallback(String feignClientName, FeignContext context,
-										 Target<T> target,
-										 RiverHystrixFeign.Builder builder, Class<?> fallback) {
+                                         Target<T> target,
+                                         RiverHystrixFeign.Builder builder, Class<?> fallback) {
 			T fallbackInstance = getFromContext("fallback", feignClientName, context, fallback, target.type());
 			return builder.target(target, fallbackInstance);
 		}

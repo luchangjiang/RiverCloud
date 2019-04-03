@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Slf4j
 public class RiverTenantHandler implements TenantHandler {
     @Autowired
-    RiverTenantConfigProperties properties;
+    private RiverTenantConfigProperties properties;
 
     @Override
     public Expression getTenantId(){

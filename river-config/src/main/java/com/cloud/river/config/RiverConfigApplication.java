@@ -2,6 +2,7 @@ package com.cloud.river.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * @author: River
  * @create: 2019-04-01 22:14
  **/
+@EnableDiscoveryClient
 @EnableConfigServer
 @SpringCloudApplication
 public class RiverConfigApplication {

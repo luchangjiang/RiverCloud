@@ -1,4 +1,8 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   com.cloud.river.common.data.cache.RedisTemplateConfig,\
+  com.cloud.river.common.data.cache.RedisCacheManagerConfig,\
+  com.cloud.river.common.data.cache.RedisCacheAutoConfiguration,\
+  com.cloud.river.common.data.tenant.RiverTenantConfigProperties,\
   com.cloud.river.common.data.tenant.TenantContextHolderFilter,\
+  com.cloud.river.common.data.tenant.RiverFeignTenantConfiguration,\
   com.cloud.river.common.data.mybatis.MybatisPlusConfig

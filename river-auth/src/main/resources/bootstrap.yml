@@ -17,7 +17,6 @@ spring:
     allow-bean-definition-overriding: true
   profiles:
     active: dev
-
 # 注册中心配置
 eureka:
   instance:
