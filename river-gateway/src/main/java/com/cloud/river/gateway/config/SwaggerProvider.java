@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 @Primary
 @AllArgsConstructor
 public class SwaggerProvider implements SwaggerResourcesProvider {
-    private static final String API_URI="/v2/api-docs";
+    public static final String API_URI="/v2/api-docs";
     private final RouteDefinitionRepository routeDefinitionRepository;
     private final FilterIgnorePropertiesConfig filterIgnorePropertiesConfig;
 
